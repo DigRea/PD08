@@ -1,0 +1,13 @@
+Files:
+LICENSE
+billfile.txt
+filemanager.py
+histfile.txt
+listdir.py
+use_functions.py
+victory.py
+
+Directories:
+.git
+.idea
+__pycache__
