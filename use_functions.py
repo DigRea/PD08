@@ -67,14 +67,18 @@ def bankfunc():
             count += refill
             print()
         elif choice == '2':
-            purchase = int(input('Введите сумму покупки: '))
-            if purchase > count:
-                print('Недостаточно средств!')
-            else:
-                name = input('Введите название покупки: ')
-                count -= purchase
-                history.append((name, purchase))
-            print()
+             # Обработка исключения
+             try:
+                purchase = int(input('Введите сумму покупки: '))
+                if purchase > count:
+                    print('Недостаточно средств!')
+                else:
+                    name = input('Введите название покупки: ')
+                    count -= purchase
+                    history.append((name, purchase))
+                print()
+             except:
+                 print('Вы ввели не число!')
         elif choice == '3':
             print('История покупок:')
             for i in history:

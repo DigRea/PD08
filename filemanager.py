@@ -1,3 +1,7 @@
+# В этом модуле используются генераторы
+# В модуле use_functions.py используется обработка исключений
+# В модуле victory.py используются тернарные операторы
+
 from victory import victory
 from use_functions import bankfunc
 from listdir import listdir
@@ -5,9 +9,9 @@ import os
 import shutil
 
 while True:
-    print('1 - Создать папку\t\t\t\t', ' 8 - Просмотр информации об ОС')
-    print('2 - Удалить файл/папку\t\t\t', ' 9 - Создатель программы')
-    print('3 - Копировать файл/папку\t\t', ' 10 - Играть в викторину')
+    print('1 - Создать папку\t\t\t\t', '8 - Просмотр информации об ОС')
+    print('2 - Удалить файл/папку\t\t\t', '9 - Создатель программы')
+    print('3 - Копировать файл/папку\t\t', '10 - Играть в викторину')
     print('4 - Просмотр рабочей директории\t', '11 - Мой банковский счёт')
     print('5 - Просмотреть только папки\t', '12 - Смена рабочей директории')
     print('6 - Просмотреть только файлы\t', '13 - Выход')
@@ -51,11 +55,13 @@ while True:
     elif choice == '5':  # Done
         print()
         path = '.'
+        # Использование генератора
         print([x for x in os.listdir(path) if os.path.isdir(os.path.join(path, x))])
         print()
     elif choice == '6':  # Done
         print()
         path = '.'
+        # Использование генератора
         print([x for x in os.listdir(path) if not os.path.isdir(os.path.join(path, x))])
         print()
     elif choice == '7':

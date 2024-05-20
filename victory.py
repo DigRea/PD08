@@ -47,9 +47,9 @@ def victory():
                 day, month, year = answer.split('.')
                 result = days[day] + ' ' + months[month] + ' ' + year + ' ' + 'года'
                 print('Неверно! Правильнвй ответ - ', result)
-                wrong += 1
-            else:
-                right += 1
+            # Использование тернарных операторов
+            right += 1 if person == answer else 0
+            wrong += 1 if person != answer else 0
 
         print()
         print('Количество правильных ответов: ', right)
